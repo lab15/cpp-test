@@ -14,9 +14,9 @@ before_install:
   - gem --version
 
 before_script:
-  - travis_retry bundle
-  - if [ $TRAVIS_OS_NAME == linux ]; then travis_retry ./configure --llvm-config llvm-config-3.4; fi
-  - if [ $TRAVIS_OS_NAME == osx ]; then travis_retry ./configure; fi
+  #- travis_retry bundle
+  #- if [ $TRAVIS_OS_NAME == linux ]; then travis_retry ./configure --llvm-config llvm-config-3.4; fi
+  #- if [ $TRAVIS_OS_NAME == osx ]; then travis_retry ./configure; fi
 
 script: rake ci
 
@@ -26,9 +26,9 @@ after_success:
 branches:
   only:
     - master
-    - 1.8.7
-    - 2.2
-    - /^v\d+\./
+    #- 1.8.7
+    #- 2.2
+    #- /^v\d+\./
 
 #notifications:
   #email: false
